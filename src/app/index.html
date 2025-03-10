@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mochinut Carolinas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: #FFF5EB;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .header {
+            background-color: #FFF5EB;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+        }
+        
+        .logo {
+            height: 60px;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-item {
+            margin-left: 30px;
+        }
+        
+        .nav-link {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-link:hover {
+            color: #ff6b6b;
+        }
+        
+        .hero {
+            height: 80vh;
+            background-image: url('https://static.wixstatic.com/media/c3a49e_2d6f82cf7c164e8a8e84a08ff2ecf1fd~mv2.jpg/v1/fill/w_1225,h_689,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/c3a49e_2d6f82cf7c164e8a8e84a08ff2ecf1fd~mv2.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.4);
+        }
+        
+        .hero-content {
+            text-align: center;
+            color: #fff;
+            z-index: 1;
+            padding: 0 20px;
+        }
+        
+        .hero-title {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #ff6b6b;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #ff5252;
+        }
+        
+        .features {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background-color: #ff6b6b;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .feature-card {
+            text-align: center;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .feature-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .menu {
+            background-color: #fbf4ed   ;
+            padding: 80px 20px;
+        }
+        
+        .menu-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .menu-item {
+            background-color: #fbf4ed;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .menu-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .menu-content {
+            padding: 20px;
+        }
+        
+        .menu-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        .menu-price {
+            color: #ff6b6b;
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+        
+        .locations {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .location-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .location-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .location-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .location-content {
+            padding: 20px;
+        }
+        
+        .location-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        .location-address {
+            margin-bottom: 15px;
+            color: #666;
+        }
+        
+        .location-hours {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 60px 20px 30px;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+        
+        .footer-logo {
+            width: 150px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-about p {
+            margin-bottom: 20px;
+        }
+        
+        .footer-title {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 3px;
+            background-color: #ff6b6b;
+            bottom: -10px;
+            left: 0;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-link {
+            margin-bottom: 10px;
+        }
+        
+        .footer-link a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-link a:hover {
+            color: #ff6b6b;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #555;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 0.3s;
+        }
+        
+        .social-icon:hover {
+            background-color: #ff6b6b;
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #555;
+            color: #aaa;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .nav-menu {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <img src="https://static.wixstatic.com/media/c3a49e_fab43ddf21ce4fa59f4f78c9a6f8c88c~mv2.png/v1/fill/w_189,h_89,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Mochinut%20Logo.png" class="logo">
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="#menu" class="nav-link">Menu</a></li>
+                <li class="nav-item"><a href="#locations" class="nav-link">Locations</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">About Us</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Mochi Donut</h1>
+            <p class="hero-subtitle">An early mock website structure for TY</p>
+            <a href="#menu" class="btn">View Our Menu</a>
+        </div>
+    </section>
+
+    <section class="features">
+        <h2 class="section-title">What Makes Us Special</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <img src="https://static.wixstatic.com/media/c3a49e_eaee440affc744e3979a3da27ef3a424~mv2.jpg/v1/fill/w_679,h_452,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/c3a49e_eaee440affc744e3979a3da27ef3a424~mv2.jpg"class="feature-img">
+                <h3 class="feature-title">Feature</h3>
+                <p>Feature description</p>
+            </div>
+            <div class="feature-card">
+                <img src="https://static.wixstatic.com/media/c3a49e_d4886d1c45544ecc8f78bb0e4f78d02a~mv2.jpg/v1/fill/w_679,h_452,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/c3a49e_d4886d1c45544ecc8f78bb0e4f78d02a~mv2.jpg" class="feature-img">
+                <h3 class="feature-title">Feature</h3>
+                <p>Feature description</p>
+            </div>
+            <div class="feature-card">
+                <img src="https://static.wixstatic.com/media/c3a49e_d5dcaddce42340e0b96f292a62a4f4c7~mv2.jpg/v1/fill/w_679,h_452,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/c3a49e_d5dcaddce42340e0b96f292a62a4f4c7~mv2.jpg" class="feature-img">
+                <h3 class="feature-title">Feature</h3>
+                <p>Feature description.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu" class="menu">
+        <div class="menu-container">
+            <h2 class="section-title">Our Menu</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="https://static.wixstatic.com/media/c3a49e_88a5ad4df0ce4edaaed45ef44fa1905c~mv2.jpg/v1/fill/w_315,h_315,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/c3a49e_88a5ad4df0ce4edaaed45ef44fa1905c~mv2.jpg" class="menu-img">
+                    <div class="menu-content">
+                        <h3 class="menu-title">Menu Item</h3>
+                        <p class="menu-price">$3.95</p>
+                        <p>Menu Item Description</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://static.wixstatic.com/media/c3a49e_25b7cf9d1d4248358edaa6c0dbf06ecd~mv2.jpg/v1/fill/w_315,h_315,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/c3a49e_25b7cf9d1d4248358edaa6c0dbf06ecd~mv2.jpg" class="menu-img">
+                    <div class="menu-content">
+                        <h3 class="menu-title">Menu Item</h3>
+                        <p class="menu-price">$4.50</p>
+                        <p>Menu Item Description</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://static.wixstatic.com/media/c3a49e_fb8e8afd1aee410ba4e3a2a2b0fda9b1~mv2.jpg/v1/fill/w_315,h_315,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/c3a49e_fb8e8afd1aee410ba4e3a2a2b0fda9b1~mv2.jpg" class="menu-img">
+                    <div class="menu-content">
+                        <h3 class="menu-title">Menu Item</h3>
+                        <p class="menu-price">$3.95</p>
+                        <p>Menu Item Description</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://static.wixstatic.com/media/c3a49e_d4886d1c45544ecc8f78bb0e4f78d02a~mv2.jpg/v1/fill/w_315,h_315,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/c3a49e_d4886d1c45544ecc8f78bb0e4f78d02a~mv2.jpg" class="menu-img">
+                    <div class="menu-content">
+                        <h3 class="menu-title">Menu Item Description</h3>
+                        <p class="menu-price">$4.95</p>
+                        <p>Menu Item Description</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="locations" class="locations">
+        <h2 class="section-title">Our Locations</h2>
+        <div class="location-grid">
+            <div class="location-card">
+                <img src="https://static.wixstatic.com/media/c3a49e_3e005efcc1cb4ea09cddbfa3d6726da1~mv2.jpg/v1/fill/w_430,h_335,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/c3a49e_3e005efcc1cb4ea09cddbfa3d6726da1~mv2.jpg" class="location-img">
+                <div class="location-content">
+                    <h3 class="location-title">City</h3>
+                    <p class="location-address">Address</p>
+                    <div class="location-hours">
+                        <p>Monday - Thursday: 8AM - 8PM</p>
+                        <p>Friday - Saturday: 11AM - 10PM</p>
+                        <p>Sunday: 11AM - 8PM</p>
+                    </div>
+                </div>
+            </div>
+            <div class="location-card">
+                <img src="https://static.wixstatic.com/media/c3a49e_3a6a5febb67149e88c3a87fe7a89f7e0~mv2.jpg/v1/fill/w_430,h_335,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/c3a49e_3a6a5febb67149e88c3a87fe7a89f7e0~mv2.jpg" class="location-img">
+                <div class="location-content">
+                    <h3 class="location-title">City</h3>
+                    <p class="location-address">Address</p>
+                    <div class="location-hours">
+                        <p>Monday - Thursday: 8AM - 8PM</p>
+                        <p>Friday - Saturday: 11AM - 10PM</p>
+                        <p>Sunday: 11AM - 8PM</p>
+                    </div>
+                </div>
+            </div>
+            <div class="location-card">
+                <img src="https://static.wixstatic.com/media/c3a49e_b9cf33e2eac04e4e8deb76fb6e60ba30~mv2.jpg/v1/fill/w_430,h_335,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/c3a49e_b9cf33e2eac04e4e8deb76fb6e60ba30~mv2.jpg" class="location-img">
+                <div class="location-content">
+                    <h3 class="location-title">City</h3>
+                    <p class="location-address">Address</p>
+                    <div class="location-hours">
+                        <p>Monday - Thursday: 8AM - 8PM</p>
+                        <p>Friday - Saturday: 11AM - 10PM</p>
+                        <p>Sunday: 11AM - 8PM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <img src="https://static.wixstatic.com/media/c3a49e_fab43ddf21ce4fa59f4f78c9a6f8c88c~mv2.png/v1/fill/w_189,h_89,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Mochinut%20Logo.png" alt="Mochinut Logo" class="footer-logo">
+                <p>Mochinut Description</p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" color="#fff">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" color="#fff">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" color="#fff">
+                            <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-links-container">
+                <h3 class="footer-title">Quick Links</h3>
+                <ul class="footer-links">
+                    <li class="footer-link"><a href="#">Home</a></li>
+                    <li class="footer-link"><a href="#menu">Menu</a></li>
+                    <li class="footer-link"><a href="#locations">Locations</a></li>
+
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3 class="footer-title">Contact Us</h3>
+                <p>Email:</p>
+                <p>Phone:</p>
+                <p>Franchising Inquiries: </p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Mochinut. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
