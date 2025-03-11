@@ -4,9 +4,12 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { Menu, X } from 'lucide-react';
 
-
+// Import Material UI icons
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,13 +19,15 @@ export default function Navbar() {
     useEffect(() => {
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 10);
-    };
+        };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const toggleMenu = () => {!isMenuOpen};
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen); // Fixed the toggle function
+    };
 
     const navLinks = [
         { href: '/', label: 'Home' },
@@ -32,7 +37,7 @@ export default function Navbar() {
     ];
 
     return (
-        <nav className = {`fixed w-full z-50 transition-all duration-300 ${
+        <nav className={`fixed w-full z-50 transition-all duration-300 ${
             isScrolled ? 'bg-zinc-800 shadow-md py-2' : 'bg-zinc-700 bg-opacity-90 py-4'
         }`}>
             <div className="container mx-auto flex px-4 justify-between items-center">
@@ -57,25 +62,41 @@ export default function Navbar() {
                                 pathname === link.href ? 'text-amber-500' : 'text-amber-50'
                             }`}
                         >
-                        {link.label}
+                            {link.label}
                         </Link>
                     ))}
+                    
+                    {/* Social Media Icons */}
+                    <a 
+                        href="https://instagram.com/mochinutspringhilltn/" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-amber-50 hover:text-amber-500 transition-colors"
+                    >
+                        <InstagramIcon />
+                    </a>
+                    <a 
+                        href="https://linkedin.com/company/mochinut-spring-hill/" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-amber-50 hover:text-amber-500 transition-colors"
+                    >
+                        <LinkedInIcon />
+                    </a>
                 </div>
-
-                
 
                 {/* Mobile Menu Button */}
                 <button
-                    className="md:hidden text-grey-700 hover:text-amber-500 transition-colors"
+                    className="md:hidden text-amber-50 hover:text-amber-500 transition-colors"
                     onClick={toggleMenu}
                     aria-label="toggle menu"
                 >
-                    {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                    {isMenuOpen ? <CloseIcon /> : <MenuIcon />}
                 </button>
 
                 {/* Mobile Nav */}
                 {isMenuOpen && (
-                    <div className="md:hidden bg-white bg-opacity-95 shadow-lg">
+                    <div className="md:hidden absolute top-full left-0 right-0 bg-white bg-opacity-95 shadow-lg">
                         <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
                             {navLinks.map((link) => (
                                 <Link
@@ -89,11 +110,30 @@ export default function Navbar() {
                                     {link.label}
                                 </Link>
                             ))}
+                            
+                            {/* Social Media Icons for Mobile */}
+                            <div className="flex items-center space-x-4 py-2">
+                                <a 
+                                    href="https://instagram.com/mochinut" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    className="text-gray-600 hover:text-amber-500 transition-colors"
+                                >
+                                    <InstagramIcon />
+                                </a>
+                                <a 
+                                    href="https://linkedin.com/company/mochinut" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    className="text-gray-600 hover:text-amber-500 transition-colors"
+                                >
+                                    <LinkedInIcon />
+                                </a>
+                            </div>
                         </div>
                     </div>
                 )}
-                    
             </div>
         </nav>
-    )
+    );
 }

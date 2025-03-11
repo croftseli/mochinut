@@ -2,6 +2,8 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import InstagramIcon from '@mui/icons-material/Instagram';
 
 export default function Footer() {
   return (
@@ -21,23 +23,23 @@ export default function Footer() {
               Handcrafted mochi donuts and premium bubble tea with unique flavors that blend Japanese and Western dessert traditions.
             </p>
             <div className="flex space-x-4">
-              <a 
-                href="https://facebook.com/mochinut" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="bg-zinc-600 hover:bg-amber-500 transition-colors p-2 rounded-full"
-                aria-label="Facebook"
-              >
-
-              </a>
-              <a 
-                href="https://instagram.com/mochinut" 
+            <a 
+                href="https://instagram.com/mochinutspringhilltn/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="bg-zinc-600 hover:bg-amber-500 transition-colors p-2 rounded-full"
                 aria-label="Instagram"
               >
-                <instagram className="w-5 h-5" />
+                <InstagramIcon className="w-5 h-5" />
+              </a>
+              <a 
+                href="https://linkedin.com/company/mochinut-spring-hill/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="bg-zinc-600 hover:bg-amber-500 transition-colors p-2 rounded-full"
+                aria-label="LinkedIn"
+              >
+                <LinkedInIcon className="w-5 h-5" />
               </a>
               <a 
                 href="https://tiktok.com/" 
