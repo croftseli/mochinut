@@ -1,3 +1,4 @@
+import Hero from "@/components/home/Hero";
 
 export const metadata = {
   title: "MochiNut",
@@ -6,13 +7,17 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
-      <h1 className="text-6xl font-bold">
-        Welcome to <span className="text-amber-700">MochiNut</span>
-      </h1>
-      <p className="text-2xl font-medium text-gray-400">
-        Full website coming soon...
-      </p>
-    </div>
+    <main>
+      {/* Hero Section */}
+      <Hero />
+      <div className="flex flex-col items-center justify-center h-screen">
+        <h1 className="text-6xl font-bold">
+          Welcome to <span className="text-amber-700">MochiNut</span>
+        </h1>
+        <p className="text-2xl font-medium text-gray-400">
+          Full website coming soon...
+        </p>
+      </div>
+    </main>
   );
 }

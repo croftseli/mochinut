@@ -7,52 +7,61 @@ import { motion } from 'framer-motion';
 export default function Hero() {
   return (
     <div className="relative h-screen min-h-[600px] overflow-hidden">
-      {/* Image Carousel */}
+      {/* Image carousel */}
       <div className="absolute inset-0">
         <Image
-          src="/hero.jpg" 
+          src="/hero.jpg"
           alt="Colorful MochiNut donuts in a box"
           fill
           priority
           className="object-cover"
         />
       </div>
-      
+
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black bg-opacity-40" />
-      
+      <div 
+        className="absolute inset-0 z-10" 
+        style={{ backgroundColor: 'rgba(0, 0, 0, 0.4)' }}
+      />
+
       {/* Content */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="container mx-auto px-4 text-center text-white">
+      <div className="absolute inset-0 z-20 flex items-center justify-center">
+        <div className="text-center px-4 max-w-3xl">
+          <motion.h1 
+            className="text-4xl md:text-6xl font-bold text-white mb-4"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            Experience the Magic of <span className="text-yellow-400">MochiNut</span>
+          </motion.h1>
+          
+          <motion.p 
+            className="text-xl text-white mb-8"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          >
+            Handcrafted mochi donuts with unique flavors that blend Japanese
+            and Western dessert traditions into a perfect sweet treat.
+          </motion.p>
+          
           <motion.div
+            className="flex flex-wrap justify-center gap-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Experience the Magic of <span className="text-amber-300">MochiNut</span>
-            </h1>
-            
-            <p className="text-lg md:text-xl max-w-2xl mx-auto mb-10">
-              Handcrafted mochi donuts with unique flavors that blend Japanese 
-              and Western dessert traditions into a perfect sweet treat.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link 
-                href="/menu"
-                className="bg-amber-500 hover:bg-amber-600 text-white px-8 py-3 rounded-full font-medium transition-colors"
-              >
+            <Link href="/menu">
+              <span className="bg-yellow-500 hover:bg-yellow-600 text-black px-6 py-3 rounded-full font-medium transition-colors">
                 View Our Menu
-              </Link>
-              
-              <Link 
-                href="/order"
-                className="bg-white hover:bg-gray-100 text-amber-600 px-8 py-3 rounded-full font-medium transition-colors"
-              >
+              </span>
+            </Link>
+            <Link href="/order">
+              <span className="bg-white hover:bg-gray-100 text-black px-6 py-3 rounded-full font-medium transition-colors">
                 Order Online
-              </Link>
-            </div>
+              </span>
+            </Link>
           </motion.div>
         </div>
       </div>
