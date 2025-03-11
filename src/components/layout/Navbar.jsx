@@ -5,8 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
-import { instagram } from 'public/icons/instagram';
-import { tiktok } from 'public/icons/tiktok';
+
 
 
 export default function Navbar() {
@@ -29,12 +28,12 @@ export default function Navbar() {
         { href: '/', label: 'Home' },
         { href: '/locations', label: 'Locations' },
         { href: '/about', label: 'About' },
-        { href: '/contactus', label: 'Contact Us' },
+        { href: '/contact', label: 'Contact Us' },
     ];
 
     return (
         <nav className = {`fixed w-full z-50 transition-all duration-300 ${
-            isScrolled ? 'bg-black shadow-md py-2' : 'bg-zinc-700 bg-opacity-90 py-4'
+            isScrolled ? 'bg-zinc-800 shadow-md py-2' : 'bg-zinc-700 bg-opacity-90 py-4'
         }`}>
             <div className="container mx-auto flex px-4 justify-between items-center">
                 {/* Logo */}
@@ -67,7 +66,7 @@ export default function Navbar() {
 
                 {/* Mobile Menu Button */}
                 <button
-                    className="md:hidden text-grey-700 hover:text-pink-500 transition-colors"
+                    className="md:hidden text-grey-700 hover:text-amber-500 transition-colors"
                     onClick={toggleMenu}
                     aria-label="toggle menu"
                 >
