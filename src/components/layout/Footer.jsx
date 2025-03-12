@@ -105,10 +105,10 @@ export default function Footer() {
             <h3 className="text-lg font-bold mb-4 text-amber-300">Contact Us</h3>
             <div className="space-y-2 text-gray-300">
               <p>
-                <span className="font-semibold">Email:</span> support@mochinutspringhill.com
+                <span className="font-semibold">Email: support@mochinutspringhill.com</span>
               </p>
               <p>
-                <span className="font-semibold">Phone:</span> （615）424-3176
+                <span className="font-semibold">Phone:（615）424-3176</span>
               </p>
               <p className="pt-4">
                 <Link 
