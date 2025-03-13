@@ -57,11 +57,6 @@ export default function Hero() {
                 View Our Menu
               </span>
             </Link>
-            <Link href="/order">
-              <span className="bg-white hover:bg-gray-100 text-black px-6 py-3 rounded-full font-medium transition-colors">
-                Order Online
-              </span>
-            </Link>
           </motion.div>
         </div>
       </div>
