@@ -92,11 +92,6 @@ export default function Footer() {
                   Contact
                 </Link>
               </li>
-              <li>
-                <Link href="/order" className="text-gray-300 hover:text-white transition-colors">
-                  Order Online
-                </Link>
-              </li>
             </ul>
           </div>
           
