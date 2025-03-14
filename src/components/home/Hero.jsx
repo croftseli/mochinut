@@ -42,8 +42,7 @@ export default function Hero() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            Test - Handcrafted mochi donuts with unique flavors that blend Japanese
-            and Western dessert traditions into a perfect sweet treat.
+            Handcrafted mochi donuts made with love and passion.
           </motion.p>
           
           <motion.div
