@@ -33,8 +33,8 @@ export default function Navbar() {
         { href: '/', label: 'Home' },
         { href: '/menu', label: 'Menu' },
         { href: '/locations', label: 'Locations' },
-        { href: '/about', label: 'About' },
-        { href: '/contact', label: 'Contact Us' },
+        { href: '/about', label: 'About Us' },
+        { href: '/contact', label: 'Contacts' },
     ];
 
     return (

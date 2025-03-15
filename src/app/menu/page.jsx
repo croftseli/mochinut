@@ -57,13 +57,14 @@ export default function Menu() {
   return (
     <main className="min-h-screen bg-gray-100 py-10 px-4 md:px-8">
       <div className="text-center mb-10">
+        <p>\n\n\n</p>
         <motion.h1
           className="text-4xl md:text-6xl font-bold text-amber-700"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          Our Menu
+          Our Menu:
         </motion.h1>
         <motion.p
           className="text-xl text-gray-600 mt-4"
