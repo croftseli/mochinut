@@ -6,9 +6,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const menuItems = [
   {
-    name: 'Matcha Bliss',
-    description: 'Rich matcha flavor with a hint of sweetness.',
-    image: '/images/matchaDonut.jpg',
+    name: 'Strawberry',
+    description: '',
+    image: '/images/mochiDonuts/strawberry.jpg',
     nutrition: {
       calories: 250,
       fat: '10g',
@@ -17,9 +17,9 @@ const menuItems = [
     },
   },
   {
-    name: 'Strawberry Delight',
-    description: 'Sweet and tangy strawberry glaze.',
-    image: '/images/strawberryDonut.jpg',
+    name: 'Yuzu',
+    description: 'Zesty citrus flavor with a tangy twist.',
+    image: '/images/mochiDonuts/yuzu.jpg',
     nutrition: {
       calories: 230,
       fat: '8g',
@@ -28,9 +28,9 @@ const menuItems = [
     },
   },
   {
-    name: 'Chocolate Overload',
-    description: 'Decadent chocolate with crunchy toppings.',
-    image: '/images/chocolateDonut.jpg',
+    name: 'Yogurt',
+    description: '',
+    image: '/images/mochiDonuts/yogurt.jpg',
     nutrition: {
       calories: 280,
       fat: '12g',
@@ -39,9 +39,75 @@ const menuItems = [
     },
   },
   {
-    name: 'Taro Dream',
-    description: 'Creamy taro with a velvety texture.',
-    image: '/images/taroDonut.jpg',
+    name: 'Ube',
+    description: '',
+    image: '/images/mochiDonuts/ube.jpg',
+    nutrition: {
+      calories: 240,
+      fat: '9g',
+      carbs: '36g',
+      protein: '3g',
+    },
+  },
+  {
+    name: 'Taro',
+    description: '',
+    image: '/images/mochiDonuts/taro.jpg',
+    nutrition: {
+      calories: 240,
+      fat: '9g',
+      carbs: '36g',
+      protein: '3g',
+    },
+  },
+  {
+    name: 'Milk Pebble',
+    description: '',
+    image: '/images/mochiDonuts/milkPebble.jpg',
+    nutrition: {
+      calories: 240,
+      fat: '9g',
+      carbs: '36g',
+      protein: '3g',
+    },
+  },
+  {
+    name: 'Churro',
+    description: '',
+    image: '/images/mochiDonuts/churro.jpg',
+    nutrition: {
+      calories: 240,
+      fat: '9g',
+      carbs: '36g',
+      protein: '3g',
+    },
+  },
+  {
+    name: 'Coffee',
+    description: '',
+    image: '/images/mochiDonuts/coffee.jpg',
+    nutrition: {
+      calories: 240,
+      fat: '9g',
+      carbs: '36g',
+      protein: '3g',
+    },
+  },
+  {
+    name: 'Ube Original',
+    description: '',
+    image: '/images/mochiDonuts/ubeOriginal.jpg',
+    nutrition: {
+      calories: 240,
+      fat: '9g',
+      carbs: '36g',
+      protein: '3g',
+    },
+  },
+  {
+    name: 'Chocolate',
+    description: '',
+    image: '/images/mochiDonuts/chocolate.jpg',
     nutrition: {
       calories: 240,
       fat: '9g',
