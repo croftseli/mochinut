@@ -42,8 +42,7 @@ export default function Hero() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            Handcrafted mochi donuts with unique flavors that blend Japanese
-            and Western dessert traditions into a perfect sweet treat.
+            Handcrafted mochi donuts made with love and passion ^_^
           </motion.p>
           
           <motion.div
@@ -55,11 +54,6 @@ export default function Hero() {
             <Link href="/menu">
               <span className="bg-yellow-500 hover:bg-yellow-600 text-black px-6 py-3 rounded-full font-medium transition-colors">
                 View Our Menu
-              </span>
-            </Link>
-            <Link href="/order">
-              <span className="bg-white hover:bg-gray-100 text-black px-6 py-3 rounded-full font-medium transition-colors">
-                Order Online
               </span>
             </Link>
           </motion.div>
