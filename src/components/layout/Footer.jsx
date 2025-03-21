@@ -28,7 +28,7 @@ export default function Footer() {
                 href="https://instagram.com/mochinutspringhilltn/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-zinc-600 hover:bg-amber-500 transition-colors p-2 rounded-full"
+                className="bg-zinc-600 hover:bg-yellow-500 transition-colors p-2 rounded-full"
                 aria-label="Instagram"
               >
                 <InstagramIcon className="w-5 h-5" />
@@ -37,7 +37,7 @@ export default function Footer() {
                 href="https://linkedin.com/company/mochinut-spring-hill/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-zinc-600 hover:bg-amber-500 transition-colors p-2 rounded-full"
+                className="bg-zinc-600 hover:bg-yellow-500 transition-colors p-2 rounded-full"
                 aria-label="LinkedIn"
               >
                 <LinkedInIcon className="w-5 h-5" />
@@ -46,7 +46,7 @@ export default function Footer() {
                 href="https://tiktok.com/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="bg-zinc-600 hover:bg-amber-500 transition-colors p-2 rounded-full"
+                className="bg-zinc-600 hover:bg-yellow-500 transition-colors p-2 rounded-full"
                 aria-label="TikTok"
               >
                 <svg 
@@ -66,7 +66,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div className="flex flex-col items-center md:items-start">
-            <h3 className="text-lg font-bold mb-4 text-amber-300">
+            <h3 className="text-lg font-bold mb-4 text-yellow-300">
               Quick Links
             </h3>
             <ul className="space-y-2">
@@ -107,7 +107,7 @@ export default function Footer() {
 
           {/* Contact Us */}
           <div className="flex flex-col items-center md:items-start">
-            <h3 className="text-lg font-bold mb-4 text-amber-300">
+            <h3 className="text-lg font-bold mb-4 text-yellow-300">
               Contact Us
             </h3>
             <div className="space-y-2 text-gray-300">
@@ -141,7 +141,7 @@ export default function Footer() {
               href="https://unitywall.co"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-amber-400 hover:underline"
+              className="text-yellow-400 hover:underline"
             >
               UnityWall.co
             </a>
