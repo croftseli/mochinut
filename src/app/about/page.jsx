@@ -4,7 +4,7 @@ import Image from "next/image";
 const teamMembers = [
   { id: 1, name: "Handmade Mochi Donuts ", position: "Freshly made daily for the perfect chew.", img: "/emp1.png" },
   { id: 2, name: "Premium Boba Tea", position: "Smooth, refreshing, and just the right amount of sweet.", img: "/emp2.png" },
-  { id: 3, name: "food", position: "try our food", img: "/emp3.png" },
+  { id: 3, name: "Delicious Cusine", position: "Authentic flavors crafted with fresh ingredients.", img: "/emp3.png" },
   // Add more as needed. Later we can add backend instead
 ];
 export default function About() {
@@ -14,7 +14,7 @@ export default function About() {
       <header className="text-center fade-in mt-8">
         <h1 className="text-5xl font-bold">About <span className="text-yellow-400">MochiNut</span></h1>
         <p className="mt-4 text-lg max-w-2xl mx-auto">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus eget.
+          
         </p>
       </header>
      
