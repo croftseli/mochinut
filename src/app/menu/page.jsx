@@ -524,7 +524,7 @@ export default function Menu() {
       <AnimatePresence>
         {selectedItem && (
           <motion.div
-            className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+            className="fixed inset-0 backdrop-blur-sm flex items-center justify-center z-50"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -537,10 +537,22 @@ export default function Menu() {
               exit={{ scale: 0.8, opacity: 0 }}
               onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside modal
             >
+              {/* Image */}
+              <img
+                src={selectedItem.image}
+                alt={selectedItem.name}
+                className="w-full h-auto object-cover rounded-lg mb-4"
+              />
+
+              {/* Title */}
               <h2 className="text-3xl font-bold text-yellow-400">
                 {selectedItem.name}
               </h2>
+
+              {/* Description */}
               <p className="text-gray-300 mt-2">{selectedItem.description}</p>
+
+              {/* Nutrition Info */}
               <div className="mt-4 text-gray-200">
                 <p>
                   <strong>Calories:</strong> {selectedItem.nutrition.calories}{" "}
@@ -556,6 +568,8 @@ export default function Menu() {
                   <strong>Protein:</strong> {selectedItem.nutrition.protein}
                 </p>
               </div>
+
+              {/* Close Button */}
               <button
                 className="mt-4 bg-yellow-400 text-black px-4 py-2 rounded-full hover:bg-yellow-500"
                 onClick={() => setSelectedItem(null)}
