@@ -6,6 +6,8 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import PhoneIcon from '@mui/icons-material/Phone';
 import LaunchIcon from '@mui/icons-material/Launch';
+import { motion } from "framer-motion";
+import AssistantDirectionIcon from '@mui/icons-material/AssistantDirection';
 
 const storeLocations = [
   { 
@@ -14,7 +16,7 @@ const storeLocations = [
     alt: "Spring Hill Store", 
     address: "1021 Jim Warren Pkwy, Suite 220",
     city: "Spring Hill, TN 37174",
-    phone: "(615) 302-5544",
+    phone: "(615)-424-3176",
     googleMapsUrl: "https://maps.google.com/?q=1021+Jim+Warren+Pkwy+Suite+220+Spring+Hill+TN+37174"
   }
 ];
@@ -24,23 +26,38 @@ export default function Locations() {
   const location = storeLocations[0];
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center py-24 px-4 sm:px-8 lg:px-16 gap-16">
+    <div className="min-h-screen bg-[#333] text-white flex flex-col items-center py-24 px-4 sm:px-8 lg:px-16 gap-16">
       {/* Header Section */}
       <header className="text-center w-full max-w-4xl">
-        <h1 className="text-4xl md:text-5xl font-bold mb-6">
+        <motion.h1 
+          className="text-4xl md:text-5xl font-bold mb-6"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
           Visit Our <span className="text-yellow-400">Store</span>
-        </h1>
-        <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+        </motion.h1>
+        <motion.p 
+          className="text-xl text-gray-300 max-w-2xl mx-auto"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+        >
           We can't wait to serve you delicious mochi donuts and premium bubble
           tea at our Spring Hill location.
-        </p>
+        </motion.p>
       </header>
 
       {/* Store Image Section */}
-      <section className="w-full max-w-6xl">
+      <motion.section 
+        className="w-full max-w-6xl"
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
         <div className="mx-auto max-w-lg">
           <div
-            className="bg-gray-800 shadow-lg rounded-xl overflow-hidden transition-all duration-300 border-2 border-yellow-400"
+            className="bg-[#444] shadow-lg rounded-xl overflow-hidden transition-all duration-300 border-2 border-yellow-400"
           >
             <div className="relative w-full h-64">
               <Image
@@ -62,11 +79,16 @@ export default function Locations() {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Map Section */}
-      <section className="w-full max-w-6xl bg-gray-800 rounded-xl overflow-hidden shadow-xl">
-        <div className="p-6 bg-gray-800">
+      <motion.section 
+        className="w-full max-w-6xl bg-[#444] rounded-xl overflow-hidden shadow-xl"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.4 }}
+      >
+        <div className="p-6 bg-[#444]">
           <h2 className="text-2xl font-semibold mb-4">
             Our Location
           </h2>
@@ -99,9 +121,9 @@ export default function Locations() {
                 href={location.googleMapsUrl} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="inline-flex items-center px-4 py-2 bg-yellow-500 hover:bg-yellow-600 text-black font-medium rounded-lg transition-colors mt-2"
+                className="inline-flex items-center px-4 py-2 bg-yellow-400 hover:bg-yellow-500 text-black font-medium rounded-lg transition-colors mt-2"
               >
-                <LaunchIcon className="mr-2" fontSize="small" />
+                <AssistantDirectionIcon className="mr-2" fontSize="small" />
                 Get Directions
               </a>
             </div>
@@ -120,7 +142,7 @@ export default function Locations() {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
 
       <style jsx>{`
