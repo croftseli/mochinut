@@ -155,31 +155,40 @@ export default function Menu() {
 
   return (
     <>
-      <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-        <title>MochiNut Menu</title>
-      </Head>
-      
-      <main className="min-h-screen bg-[#333] text-white py-6 md:py-10 px-4 md:px-8 overflow-x-hidden">
-        {/* Title */}
-        <div className="text-center mb-6 md:mb-10">
-          <motion.h1
-            className="text-3xl md:text-6xl font-bold text-yellow-400"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            Our Menu:
-          </motion.h1>
-          <motion.p
-            className="text-lg md:text-xl text-gray-300 mt-2 md:mt-4"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-          >
-            Explore our delicious offerings!
-          </motion.p>
-        </div>
+    <Head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+      <title>MochiNut Menu</title>
+    </Head>
+    
+    <main className="min-h-screen bg-[#333] text-white py-6 md:py-10 px-4 md:px-8 overflow-x-hidden">
+      {/* Title */}
+      <div className="text-center mb-8 md:mb-12 pt-6 md:pt-10 flex justify-center items-baseline">
+        <motion.span
+          className="text-3xl md:text-6xl font-bold text-white mr-2"
+          initial={{ opacity: 0, y: -23 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          Our
+        </motion.span>
+        <motion.span
+          className="text-3xl md:text-6xl font-bold text-yellow-400"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          Menu:
+        </motion.span>
+      </div>
+      <motion.p
+        className="text-lg md:text-xl text-gray-300 mt-2 md:mt-4 text-center"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.3 }}
+      >
+        Explore our delicious offerings!
+      </motion.p>
+
 
         <div className="mb-6 overflow-x-auto pb-2 -mx-4 px-4">
           <div className="flex space-x-2 md:space-x-4 md:justify-center">
@@ -223,7 +232,7 @@ export default function Menu() {
                     src={item.image}
                     alt={item.name}
                     fill
-                    className="object-cover"
+                    className="object-contain"
                     sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                   />
                 </div>
@@ -262,7 +271,7 @@ export default function Menu() {
                     src={selectedItem.image}
                     alt={selectedItem.name}
                     fill
-                    className="object-cover rounded-lg"
+                    className="object-contain p-2 rounded-lg"
                   />
                 </div>
 
