@@ -110,10 +110,11 @@ export default function Locations() {
               
               <div className="flex items-start mb-4">
                 <AccessTimeIcon className="text-yellow-400 mr-2" fontSize="small" />
-                <div>
+                <div> {/*}
                   <p className="text-gray-300">Monday - Thursday: 11am - 8pm</p>
                   <p className="text-gray-300">Friday - Saturday: 11am - 9pm</p>
-                  <p className="text-gray-300">Sunday: 12pm - 7pm</p>
+                  <p className="text-gray-300">Sunday: 12pm - 7pm</p> */}
+                  <p className="text-gray-300">Opening soon...</p>
                 </div>
               </div>
               
