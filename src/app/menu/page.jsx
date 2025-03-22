@@ -227,14 +227,16 @@ export default function Menu() {
                 variants={itemVariants}
                 onClick={() => setSelectedItem(item)}
               >
-                <div className="relative w-full h-40 md:h-48">
-                  <Image
-                    src={item.image}
-                    alt={item.name}
-                    fill
-                    className="object-contain"
-                    sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                  />
+                <div className="pt-4">
+                  <div className="relative w-full h-40 md:h-48">
+                    <Image
+                      src={item.image}
+                      alt={item.name}
+                      fill
+                      className="object-contain"
+                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    />
+                  </div>
                 </div>
                 <div className="p-4">
                   <h2 className="text-xl md:text-2xl font-bold text-yellow-400">
