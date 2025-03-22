@@ -8,7 +8,7 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 export default function Footer() {
   return (
     <footer className="bg-zinc-700 text-white">
-      <div className="container mx-auto px-4 py-12">
+      <div className="container mx-auto px-6 py-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* About Section */}
           <div className="flex flex-col items-center md:items-start">
