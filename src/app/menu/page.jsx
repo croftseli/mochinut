@@ -1,69 +1,69 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import Image from 'next/image';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState } from "react";
+import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
 
 const mochiDonuts = [
   {
-    name: 'Strawberry',
-    description: 'A sweet and fruity delight with a fresh strawberry glaze.',
-    image: '/images/mochiDonuts/strawberry.png',
-    nutrition: {calories: 250, fat: '10g', carbs: '35g', protein: '3g',},
+    name: "Strawberry",
+    description: "A sweet and fruity delight with a fresh strawberry glaze.",
+    image: "/images/mochiDonuts/strawberry.png",
+    nutrition: { calories: 250, fat: "10g", carbs: "35g", protein: "3g" },
   },
   {
-    name: 'Yuzu',
-    description: 'Zesty citrus flavor with a tangy twist.',
-    image: '/images/mochiDonuts/yuzu.png',
-    nutrition: {calories: 250, fat: '10g', carbs: '35g', protein: '3g',},
+    name: "Yuzu",
+    description: "Zesty citrus flavor with a tangy twist.",
+    image: "/images/mochiDonuts/yuzu.png",
+    nutrition: { calories: 250, fat: "10g", carbs: "35g", protein: "3g" },
   },
   {
-    name: 'Yogurt',
-    description: 'Smooth and creamy with a light, tangy yogurt glaze.',
-    image: '/images/mochiDonuts/yogurt.png',
-    nutrition: {calories: 250, fat: '10g', carbs: '35g', protein: '3g',},
+    name: "Yogurt",
+    description: "Smooth and creamy with a light, tangy yogurt glaze.",
+    image: "/images/mochiDonuts/yogurt.png",
+    nutrition: { calories: 250, fat: "10g", carbs: "35g", protein: "3g" },
   },
   {
-    name: 'Ube',
-    description: 'A rich and nutty purple yam flavor with a hint of vanilla.',
-    image: '/images/mochiDonuts/ube.png',
-    nutrition: {calories: 250, fat: '10g', carbs: '35g', protein: '3g',},
+    name: "Ube",
+    description: "A rich and nutty purple yam flavor with a hint of vanilla.",
+    image: "/images/mochiDonuts/ube.png",
+    nutrition: { calories: 250, fat: "10g", carbs: "35g", protein: "3g" },
   },
   {
-    name: 'Taro',
-    description: 'Earthy and subtly sweet taro glaze with a creamy texture.',
-    image: '/images/mochiDonuts/taro.png',
-    nutrition: {calories: 250, fat: '10g', carbs: '35g', protein: '3g',},
+    name: "Taro",
+    description: "Earthy and subtly sweet taro glaze with a creamy texture.",
+    image: "/images/mochiDonuts/taro.png",
+    nutrition: { calories: 250, fat: "10g", carbs: "35g", protein: "3g" },
   },
   {
-    name: 'Milk Pebble',
-    description: 'A sweet and milky glaze with a crunchy cereal topping.',
-    image: '/images/mochiDonuts/milkPebble.png',
-    nutrition: {calories: 250, fat: '10g', carbs: '35g', protein: '3g',},
+    name: "Milk Pebble",
+    description: "A sweet and milky glaze with a crunchy cereal topping.",
+    image: "/images/mochiDonuts/milkPebble.png",
+    nutrition: { calories: 250, fat: "10g", carbs: "35g", protein: "3g" },
   },
   {
-    name: 'Churro',
-    description: 'A cinnamon-sugar-coated mochi donut with a hint of vanilla.',
-    image: '/images/mochiDonuts/churro.png',
-    nutrition: {calories: 250, fat: '10g', carbs: '35g', protein: '3g',},
+    name: "Churro",
+    description: "A cinnamon-sugar-coated mochi donut with a hint of vanilla.",
+    image: "/images/mochiDonuts/churro.png",
+    nutrition: { calories: 250, fat: "10g", carbs: "35g", protein: "3g" },
   },
   {
-    name: 'Coffee',
-    description: 'Bold and aromatic coffee glaze with a smooth finish.',
-    image: '/images/mochiDonuts/coffee.png',
-    nutrition: {calories: 250, fat: '10g', carbs: '35g', protein: '3g',},
+    name: "Coffee",
+    description: "Bold and aromatic coffee glaze with a smooth finish.",
+    image: "/images/mochiDonuts/coffee.png",
+    nutrition: { calories: 250, fat: "10g", carbs: "35g", protein: "3g" },
   },
   {
-    name: 'Ube Original',
-    description: 'Classic ube flavor with a rich, creamy purple yam glaze.',
-    image: '/images/mochiDonuts/ubeOriginal.png',
-    nutrition: {calories: 250, fat: '10g', carbs: '35g', protein: '3g',},
+    name: "Ube Original",
+    description: "Classic ube flavor with a rich, creamy purple yam glaze.",
+    image: "/images/mochiDonuts/ubeOriginal.png",
+    nutrition: { calories: 250, fat: "10g", carbs: "35g", protein: "3g" },
   },
   {
-    name: 'Chocolate',
-    description: 'Decadent chocolate glaze with a rich and smooth texture.',
-    image: '/images/mochiDonuts/chocolate.png',
-    nutrition: {calories: 250, fat: '10g', carbs: '35g', protein: '3g',},
+    name: "Chocolate",
+    description: "Decadent chocolate glaze with a rich and smooth texture.",
+    image: "/images/mochiDonuts/chocolate.png",
+    nutrition: { calories: 250, fat: "10g", carbs: "35g", protein: "3g" },
   },
   {
     name: "Banana Milk",
@@ -73,7 +73,8 @@ const mochiDonuts = [
   },
   {
     name: "Black Sugar",
-    description: "Rich and caramelized black sugar glaze with a hint of sweetness.",
+    description:
+      "Rich and caramelized black sugar glaze with a hint of sweetness.",
     image: "/images/mochiDonuts/blackSugar.png",
     nutrition: { calories: 250, fat: "10g", carbs: "35g", protein: "3g" },
   },
@@ -85,7 +86,8 @@ const mochiDonuts = [
   },
   {
     name: "Strawberry Funnel",
-    description: "A sweet and fruity strawberry glaze with a crunchy funnel cake topping.",
+    description:
+      "A sweet and fruity strawberry glaze with a crunchy funnel cake topping.",
     image: "/images/mochiDonuts/strawberryFunnel.png",
     nutrition: { calories: 250, fat: "10g", carbs: "35g", protein: "3g" },
   },
@@ -109,7 +111,8 @@ const mochiDonuts = [
   },
   {
     name: "Peanut Butter",
-    description: "Creamy and nutty peanut butter glaze with a hint of sweetness.",
+    description:
+      "Creamy and nutty peanut butter glaze with a hint of sweetness.",
     image: "/images/mochiDonuts/peanutButter.png",
     nutrition: { calories: 250, fat: "10g", carbs: "35g", protein: "3g" },
   },
@@ -223,13 +226,15 @@ const hotDogs = [
   },
   {
     name: "Potato Half & Half",
-    description: "Half beef, half mozzarella hot dog with crispy potatos on top.",
+    description:
+      "Half beef, half mozzarella hot dog with crispy potatos on top.",
     image: "/images/hotdogs/potatoHalfHalf.png",
     nutrition: { calories: 310, fat: "20g", carbs: "24g", protein: "14g" },
   },
   {
     name: "Potato Mozzarella",
-    description: "Hot dog with a gooey mozzarella cheese filling and crispy potatos on top.",
+    description:
+      "Hot dog with a gooey mozzarella cheese filling and crispy potatos on top.",
     image: "/images/hotdogs/potatoMozzarella.png",
     nutrition: { calories: 300, fat: "19g", carbs: "23g", protein: "13g" },
   },
@@ -253,7 +258,8 @@ const hotDogs = [
   },
   {
     name: "Hot Cheetos Half & Half",
-    description: "Half beef, half mozzarella hot dog with crushed hot cheetos on top.",
+    description:
+      "Half beef, half mozzarella hot dog with crushed hot cheetos on top.",
     image: "/images/hotdogs/hotCheetosHalfHalf.png",
     nutrition: { calories: 320, fat: "21g", carbs: "25g", protein: "14g" },
   },
@@ -265,7 +271,8 @@ const hotDogs = [
   },
   {
     name: "Crunch Cereal Half & Half",
-    description: "Half beef, half mozzarella hot dog with crunchy cereal on top.",
+    description:
+      "Half beef, half mozzarella hot dog with crunchy cereal on top.",
     image: "/images/hotdogs/crunchCerealHalfHalf.png",
     nutrition: { calories: 330, fat: "22g", carbs: "26g", protein: "15g" },
   },
@@ -292,7 +299,8 @@ const drinks = [
   },
   {
     name: "Brown Sugar",
-    description: "Rich and caramelized brown sugar bubble tea with a hint of sweetness.",
+    description:
+      "Rich and caramelized brown sugar bubble tea with a hint of sweetness.",
     image: "/images/drinks/brownSugar.png",
     nutrition: { calories: 190, fat: "6g", carbs: "32g", protein: "4g" },
   },
@@ -304,7 +312,8 @@ const drinks = [
   },
   {
     name: "Purple Sweet Potato Latte",
-    description: "Rich and creamy purple sweet potato latte bubble tea with a hint of vanilla.",
+    description:
+      "Rich and creamy purple sweet potato latte bubble tea with a hint of vanilla.",
     image: "/images/drinks/purpleSweetPotatoLatte.png",
     nutrition: { calories: 200, fat: "7g", carbs: "30g", protein: "4g" },
   },
@@ -316,7 +325,8 @@ const drinks = [
   },
   {
     name: "Matcha",
-    description: "Smooth and creamy matcha bubble tea with a hint of sweetness.",
+    description:
+      "Smooth and creamy matcha bubble tea with a hint of sweetness.",
     image: "/images/drinks/matcha.png",
     nutrition: { calories: 160, fat: "4g", carbs: "28g", protein: "2g" },
   },
@@ -331,19 +341,22 @@ const iceCream = [
   },
   {
     name: "Ube",
-    description: "1KG of rich and nutty purple yam ice cream with a hint of vanilla.",
+    description:
+      "1KG of rich and nutty purple yam ice cream with a hint of vanilla.",
     image: "/images/iceCream/ube.png",
     nutrition: { calories: 820, fat: "42g", carbs: "102g", protein: "22g" },
   },
   {
     name: "Choco",
-    description: "1KG of decadent chocolate ice cream with a rich and smooth texture.",
+    description:
+      "1KG of decadent chocolate ice cream with a rich and smooth texture.",
     image: "/images/iceCream/choco.png",
     nutrition: { calories: 840, fat: "44g", carbs: "104g", protein: "24g" },
   },
   {
     name: "Matcha",
-    description: "1KG of smooth and creamy matcha ice cream with a hint of sweetness.",
+    description:
+      "1KG of smooth and creamy matcha ice cream with a hint of sweetness.",
     image: "/images/iceCream/matcha.png",
     nutrition: { calories: 860, fat: "46g", carbs: "106g", protein: "26g" },
   },
@@ -421,7 +434,6 @@ const iceCream = [
   },
 ];
 
-
 export default function Menu() {
   const [selectedItem, setSelectedItem] = useState(null);
   const [activeTab, setActiveTab] = useState("Mochi Donuts");
@@ -436,11 +448,11 @@ export default function Menu() {
   };
 
   return (
-    <main className="min-h-screen bg-gray-100 py-10 px-4 md:px-8">
+    <main className="min-h-screen bg-[#333] text-white py-10 px-4 md:px-8">
       {/* Title */}
       <div className="text-center mb-10">
         <motion.h1
-          className="text-4xl md:text-6xl font-bold text-amber-700"
+          className="text-4xl md:text-6xl font-bold text-yellow-400"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -448,7 +460,7 @@ export default function Menu() {
           Our Menu:
         </motion.h1>
         <motion.p
-          className="text-xl text-gray-600 mt-4"
+          className="text-xl text-gray-300 mt-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.3 }}
@@ -459,27 +471,32 @@ export default function Menu() {
 
       {/* Tabs */}
       <div className="flex justify-center space-x-4 mb-8">
-        {["Mochi Donuts", "Mochi-Balls", "Hotdogs", "Drinks", "Ice Cream"].map((tab) => (
-          <button
-            key={tab}
-            onClick={() => setActiveTab(tab)}
-            className={`px-6 py-2 rounded-full font-semibold transition ${
-              activeTab === tab
-                ? "bg-amber-700 text-white"
-                : "bg-gray-300 text-gray-700 hover:bg-gray-400"
-            }`}
-          >
-            {tab}
-          </button>
-        ))}
+        {["Mochi Donuts", "Mochi-Balls", "Hotdogs", "Drinks", "Ice Cream"].map(
+          (tab) => (
+            <button
+              key={tab}
+              onClick={() => setActiveTab(tab)}
+              className={`px-6 py-2 rounded-full font-semibold transition ${
+                activeTab === tab
+                  ? "bg-yellow-400 text-black"
+                  : "bg-gray-700 text-gray-300 hover:bg-gray-600"
+              }`}
+            >
+              {tab}
+            </button>
+          )
+        )}
       </div>
 
       {/* Menu Items */}
-      <div key={activeTab} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+      <div
+        key={activeTab}
+        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto"
+      >
         {getMenuItems().map((item, index) => (
           <motion.div
             key={index}
-            className="bg-white shadow-lg rounded-xl overflow-hidden transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer"
+            className="bg-[#444] shadow-lg rounded-xl overflow-hidden transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: index * 0.2 }}
@@ -494,8 +511,10 @@ export default function Menu() {
               className="w-full h-48 object-cover"
             />
             <div className="p-4">
-              <h2 className="text-2xl font-bold text-amber-700">{item.name}</h2>
-              <p className="text-gray-600 mt-2">{item.description}</p>
+              <h2 className="text-2xl font-bold text-yellow-400">
+                {item.name}
+              </h2>
+              <p className="text-gray-300 mt-2">{item.description}</p>
             </div>
           </motion.div>
         ))}
@@ -505,24 +524,36 @@ export default function Menu() {
       <AnimatePresence>
         {selectedItem && (
           <motion.div
-            className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+            className="fixed inset-0 backdrop-blur-sm flex items-center justify-center z-50"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setSelectedItem(null)}
           >
             <motion.div
-              className="bg-white rounded-xl p-6 shadow-lg max-w-sm text-center"
+              className="bg-[#444] text-white rounded-xl p-6 shadow-lg max-w-sm text-center"
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
               onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside modal
             >
-              <h2 className="text-3xl font-bold text-amber-700">
+              {/* Image */}
+              <img
+                src={selectedItem.image}
+                alt={selectedItem.name}
+                className="w-full h-auto object-cover rounded-lg mb-4"
+              />
+
+              {/* Title */}
+              <h2 className="text-3xl font-bold text-yellow-400">
                 {selectedItem.name}
               </h2>
-              <p className="text-gray-600 mt-2">{selectedItem.description}</p>
-              <div className="mt-4 text-gray-800">
+
+              {/* Description */}
+              <p className="text-gray-300 mt-2">{selectedItem.description}</p>
+
+              {/* Nutrition Info */}
+              <div className="mt-4 text-gray-200">
                 <p>
                   <strong>Calories:</strong> {selectedItem.nutrition.calories}{" "}
                   kcal
@@ -537,8 +568,10 @@ export default function Menu() {
                   <strong>Protein:</strong> {selectedItem.nutrition.protein}
                 </p>
               </div>
+
+              {/* Close Button */}
               <button
-                className="mt-4 bg-amber-600 text-white px-4 py-2 rounded-full hover:bg-amber-700"
+                className="mt-4 bg-yellow-400 text-black px-4 py-2 rounded-full hover:bg-yellow-500"
                 onClick={() => setSelectedItem(null)}
               >
                 Close
