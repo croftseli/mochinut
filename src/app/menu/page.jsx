@@ -181,7 +181,7 @@ export default function Menu() {
         </motion.span>
       </div>
       <motion.p
-        className="text-lg md:text-xl text-gray-300 mt-2 md:mt-4 text-center"
+        className="text-lg md:text-xl text-gray-300 mb-8 md:mb-12 text-center"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.3 }}
