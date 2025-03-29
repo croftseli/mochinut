@@ -16,8 +16,8 @@ const teamMembers = [
   },
   {
     id: 3,
-    name: "Delicious Cusine",
-    position: "Authentic flavors crafted with fresh ingredients.",
+    name: "And LOTS more...",
+    position: "Come visit us and try!",
     img: "/emp3.png",
   },
   // Add more as needed. Later we can add backend instead
