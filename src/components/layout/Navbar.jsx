@@ -64,7 +64,7 @@ export default function Navbar() {
               key={link.href}
               href={link.href}
               className={`font-medium transition-colors hover:text-yellow-400 ${
-                pathname === link.href ? "text-yellow-400" : "text-yellow-40"
+                pathname === link.href ? "text-yellow-400" : "text-white"
               }`}
             >
               {link.label}
@@ -76,7 +76,7 @@ export default function Navbar() {
             href="https://instagram.com/mochinutspringhilltn/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-yellow-40 hover:text-yellow-400 transition-colors"
+            className="text-white hover:text-yellow-400 transition-colors"
           >
             <InstagramIcon />
           </a>
@@ -84,7 +84,7 @@ export default function Navbar() {
             href="https://linkedin.com/company/mochinut-spring-hill/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-yellow-40 hover:text-yellow-400 transition-colors"
+            className="text-white hover:text-yellow-400 transition-colors"
           >
             <LinkedInIcon />
           </a>
@@ -92,7 +92,7 @@ export default function Navbar() {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-yellow-40 hover:text-yellow-400 transition-colors"
+          className="md:hidden text-white hover:text-yellow-400 transition-colors"
           onClick={toggleMenu}
           aria-label="toggle menu"
         >
