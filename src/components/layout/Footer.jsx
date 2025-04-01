@@ -17,7 +17,7 @@ export default function Footer() {
               alt="MochiNut Logo"
               width={150}
               height={70}
-              className="mb-4 invert" // Inverts colors to make logo white
+              className="mb-4 rounded-full"
             />
             <p className="text-gray-300 mb-6 text-center md:text-left">
               Handcrafted mochi donuts and premium bubble tea with unique

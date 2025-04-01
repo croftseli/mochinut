@@ -53,7 +53,7 @@ export default function Navbar() {
             alt="MochiNut Logo"
             width={70}
             height={70}
-            className="cursor-pointer"
+            className="cursor-pointer rounded-full"
           />
         </Link>
 
