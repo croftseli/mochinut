@@ -1,16 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  /* Existing Global Variables */
   --background: #ffffff;
   --foreground: #171717;
-
-  /* Custom Palette Variables */
-  --accent-soft-pastel-pink: #FADADD;
-  --accent-mint-green: #98FF98;
-  --background-warm-beige: #F5F5DC;
-  --button-lavender: #E6E6FA;
-  --button-soft-coral: #FFB6A6;
 }
 
 @theme inline {
@@ -31,45 +23,4 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
-}
-
-/* Custom Accent Classes */
-.accent-soft-pastel-pink {
-  color: var(--accent-soft-pastel-pink);
-}
-
-.accent-mint-green {
-  color: var(--accent-mint-green);
-}
-
-/* Button Styling */
-.button {
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 4px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-/* Primary Button using Lavender with a hover effect */
-.button-primary {
-  background-color: var(--button-lavender);
-  color: #333;
-}
-
-.button-primary:hover {
-  background-color: var(--button-soft-coral);
-  transform: translateY(-2px);
-}
-
-/* Secondary Button using Soft Coral with a hover effect */
-.button-secondary {
-  background-color: var(--button-soft-coral);
-  color: #333;
-}
-
-.button-secondary:hover {
-  background-color: var(--button-lavender);
-  transform: translateY(-2px);
 }
