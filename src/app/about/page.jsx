@@ -38,7 +38,7 @@ export default function About() {
         <div>
           <h2 className="text-3xl font-semibold text-yellow-400">Who We Are</h2>
           <p className="mt-4 text-lg">
-            At MochiNut, we believe life is too short for boring desserts.
+            At Mochinut, we believe life is too short for boring desserts.
             That’s why we craft the fluffiest, chewiest mochi donuts and pair
             them with the most slurpable boba tea in existence. Whether you’re
             here for a quick treat or a full-on sugar pilgrimage, we’ve got your
@@ -48,7 +48,7 @@ export default function About() {
         <div className="relative w-full h-64 sm:h-80">
           <Image
             src="/boutus1.png"
-            alt="MochiNut store"
+            alt="Mochi donut array on a table"
             fill
             className="rounded-lg shadow-lg object-cover"
           />
