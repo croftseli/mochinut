@@ -12,7 +12,7 @@ const teamMembers = [
     id: 2,
     name: "Premium Boba Tea",
     position: "Smooth, refreshing, and just the right amount of sweet.",
-    img: "/emp2.png",
+    img: "/2 boba on table.jpg",
   },
   {
     id: 3,
@@ -59,8 +59,8 @@ export default function About() {
       <section className="grid grid-cols-1 sm:grid-cols-2 gap-12 items-center fade-in-slide">
         <div className="relative w-full h-64 sm:h-80">
           <Image
-            src="/boutus2.png"
-            alt="Fresh donuts"
+            src="/Drinks and corndogs 2.jpg"
+            alt="bubble tea and corndog array"
             fill
             className="rounded-lg shadow-lg object-cover"
           />
