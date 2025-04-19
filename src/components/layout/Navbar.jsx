@@ -50,7 +50,7 @@ export default function Navbar() {
         <Link href="/">
           <Image
             src="/logo.jpg"
-            alt="MochiNut Logo"
+            alt="Mochinut Logo"
             width={70}
             height={70}
             className="cursor-pointer rounded-full"
