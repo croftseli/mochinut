@@ -28,7 +28,7 @@ export default function About() {
       {/* Header Section */}
       <header className="text-center fade-in mt-8">
         <h1 className="text-5xl font-bold">
-          About <span className="text-yellow-400">MochiNut</span>
+          About <span className="text-yellow-400">Mochinut</span>
         </h1>
         <p className="mt-4 text-lg max-w-2xl mx-auto"></p>
       </header>

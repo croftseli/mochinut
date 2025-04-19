@@ -14,7 +14,7 @@ export default function Footer() {
           <div className="flex flex-col items-center md:items-start">
             <Image
               src="/logo.jpg"
-              alt="MochiNut Logo"
+              alt="Mochinut Logo"
               width={150}
               height={70}
               className="mb-4 rounded-full"
@@ -141,7 +141,7 @@ export default function Footer() {
       <div className="bg-zinc-800 py-4">
         <div className="container mx-auto px-4 text-center text-gray-400">
           <p>
-            &copy; {new Date().getFullYear()} MochiNut. All Rights Reserved.
+            &copy; {new Date().getFullYear()} Mochinut. All Rights Reserved.
           </p>
           <p className="mt-1">
             Managed by{" "}

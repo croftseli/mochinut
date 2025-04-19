@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import Link from 'next/link';
-import { motion } from 'framer-motion';
+import Image from "next/image";
+import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
@@ -11,7 +11,7 @@ export default function Hero() {
       <div className="absolute inset-0">
         <Image
           src="/hero.jpg"
-          alt="Colorful MochiNut donuts in a box"
+          alt="Colorful Mochinut donuts in a box"
           fill
           priority
           className="object-cover"
@@ -19,24 +19,25 @@ export default function Hero() {
       </div>
 
       {/* Overlay */}
-      <div 
-        className="absolute inset-0 z-10" 
-        style={{ backgroundColor: 'rgba(0, 0, 0, 0.4)' }}
+      <div
+        className="absolute inset-0 z-10"
+        style={{ backgroundColor: "rgba(0, 0, 0, 0.4)" }}
       />
 
       {/* Content */}
       <div className="absolute inset-0 z-20 flex items-center justify-center">
         <div className="text-center px-4 max-w-3xl">
-          <motion.h1 
+          <motion.h1
             className="text-4xl md:text-6xl font-bold text-white mb-4"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            Experience the Magic of <span className="text-yellow-400">MochiNut</span>
+            Experience the Magic of{" "}
+            <span className="text-yellow-400">Mochinut</span>
           </motion.h1>
-          
-          <motion.p 
+
+          <motion.p
             className="text-xl text-white mb-8"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -44,7 +45,7 @@ export default function Hero() {
           >
             Handcrafted mochi donuts made with love and passion ^_^
           </motion.p>
-          
+
           <motion.div
             className="flex flex-wrap justify-center gap-4"
             initial={{ opacity: 0, y: 20 }}
