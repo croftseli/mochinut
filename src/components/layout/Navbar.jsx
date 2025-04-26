@@ -119,7 +119,7 @@ export default function Navbar() {
               {/* Social Media Icons for Mobile */}
               <div className="flex items-center space-x-4 py-2">
                 <a
-                  href="https://instagram.com/mochinut"
+                  href="https://instagram.com/mochinutspringhilltn"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-600 hover:text-yellow-400 transition-colors"
@@ -127,7 +127,7 @@ export default function Navbar() {
                   <InstagramIcon />
                 </a>
                 <a
-                  href="https://linkedin.com/company/mochinut"
+                  href="https://linkedin.com/company/mochinut-spring-hill"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-600 hover:text-yellow-400 transition-colors"
