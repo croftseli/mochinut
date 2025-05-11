@@ -1,12 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import EmailIcon from '@mui/icons-material/Email';
-import PhoneIcon from '@mui/icons-material/Phone';
-import PersonIcon from '@mui/icons-material/Person';
-import MessageIcon from '@mui/icons-material/Message';
-import SubjectIcon from '@mui/icons-material/Subject';
-import SendIcon from '@mui/icons-material/Send';
+import emailjs from "emailjs-com";
+import EmailIcon from "@mui/icons-material/Email";
+import PhoneIcon from "@mui/icons-material/Phone";
+import PersonIcon from "@mui/icons-material/Person";
+import MessageIcon from "@mui/icons-material/Message";
+import SubjectIcon from "@mui/icons-material/Subject";
+import SendIcon from "@mui/icons-material/Send";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -14,95 +15,54 @@ export default function Contact() {
     email: "",
     phone: "",
     subject: "",
-    message: ""
+    message: "",
   });
 
   const [errors, setErrors] = useState({});
+  const [submitMessage, setSubmitMessage] = useState({
+    text: "",
+    isError: false,
+  });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitMessage, setSubmitMessage] = useState({ text: "", isError: false });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value
-    });
-    
-    // Clear error when user starts typing
-    if (errors[name]) {
-      setErrors({
-        ...errors,
-        [name]: null
-      });
-    }
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const validateForm = () => {
-    const newErrors = {};
-    
-    // Name validation
-    if (!formData.name.trim()) {
-      newErrors.name = "Name is required";
-    }
-    
-    // Email validation
-    if (!formData.email.trim()) {
-      newErrors.email = "Email is required";
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = "Email address is invalid";
-    }
-    
-    // Phone validation - optional but validate format if provided
-    if (formData.phone && !/^[0-9\-\(\)\s\+]+$/.test(formData.phone)) {
-      newErrors.phone = "Phone number is invalid";
-    }
-    
-    // Subject validation
-    if (!formData.subject.trim()) {
-      newErrors.subject = "Subject is required";
-    }
-    
-    // Message validation
-    if (!formData.message.trim()) {
-      newErrors.message = "Message is required";
-    } else if (formData.message.trim().length < 10) {
-      newErrors.message = "Message must be at least 10 characters";
-    }
-    
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
+  const validate = () => {
+    const errs = {};
+    if (!formData.name) errs.name = "Name is required";
+    if (!formData.email) errs.email = "Email is required";
+    if (!formData.subject) errs.subject = "Subject is required";
+    if (!formData.message) errs.message = "Message is required";
+    return errs;
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    if (!validateForm()) return;
-    
+    const validationErrors = validate();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
+
+    setErrors({});
     setIsSubmitting(true);
-    setSubmitMessage({ text: "", isError: false });
-    
+
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      
-      // Success message
+      await emailjs.send(
+        "service_ipbmjk9",
+        "template_3kvwx3z",
+        formData,
+        "WdtpEMWw4VFIUpHeP"
+      );
+      setSubmitMessage({ text: "Message sent successfully!", isError: false });
+      setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
+    } catch (err) {
       setSubmitMessage({
-        text: "Thank you! Your message has been sent successfully.",
-        isError: false
-      });
-      
-      // Reset form
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        subject: "",
-        message: ""
-      });
-    } catch (error) {
-      setSubmitMessage({
-        text: "Sorry, something went wrong. Please try again later.",
-        isError: true
+        text: "Failed to send message. Try again later.",
+        isError: true,
       });
     } finally {
       setIsSubmitting(false);
@@ -117,7 +77,8 @@ export default function Contact() {
           Contact <span className="text-yellow-400">Us</span>
         </h1>
         <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-          Have questions or feedback? We'd love to hear from you! Fill out the form below and we'll get back to you as soon as possible.
+          Have questions or feedback? We'd love to hear from you! Fill out the
+          form below and we'll get back to you as soon as possible.
         </p>
       </header>
 
@@ -135,10 +96,16 @@ export default function Contact() {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              className={`w-full p-3 bg-gray-700 rounded-lg focus:outline-none focus:ring-2 ${errors.name ? 'border-red-500 focus:ring-red-500' : 'focus:ring-yellow-400'}`}
+              className={`w-full p-3 bg-gray-700 rounded-lg focus:outline-none focus:ring-2 ${
+                errors.name
+                  ? "border-red-500 focus:ring-red-500"
+                  : "focus:ring-yellow-400"
+              }`}
               placeholder="Your Name"
             />
-            {errors.name && <p className="text-red-500 mt-1 text-sm">{errors.name}</p>}
+            {errors.name && (
+              <p className="text-red-500 mt-1 text-sm">{errors.name}</p>
+            )}
           </div>
 
           {/* Email Field */}
@@ -152,10 +119,16 @@ export default function Contact() {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className={`w-full p-3 bg-gray-700 rounded-lg focus:outline-none focus:ring-2 ${errors.email ? 'border-red-500 focus:ring-red-500' : 'focus:ring-yellow-400'}`}
+              className={`w-full p-3 bg-gray-700 rounded-lg focus:outline-none focus:ring-2 ${
+                errors.email
+                  ? "border-red-500 focus:ring-red-500"
+                  : "focus:ring-yellow-400"
+              }`}
               placeholder="your@email.com"
             />
-            {errors.email && <p className="text-red-500 mt-1 text-sm">{errors.email}</p>}
+            {errors.email && (
+              <p className="text-red-500 mt-1 text-sm">{errors.email}</p>
+            )}
           </div>
 
           {/* Phone Field */}
@@ -169,10 +142,16 @@ export default function Contact() {
               name="phone"
               value={formData.phone}
               onChange={handleChange}
-              className={`w-full p-3 bg-gray-700 rounded-lg focus:outline-none focus:ring-2 ${errors.phone ? 'border-red-500 focus:ring-red-500' : 'focus:ring-yellow-400'}`}
+              className={`w-full p-3 bg-gray-700 rounded-lg focus:outline-none focus:ring-2 ${
+                errors.phone
+                  ? "border-red-500 focus:ring-red-500"
+                  : "focus:ring-yellow-400"
+              }`}
               placeholder="(123) 456-7890"
             />
-            {errors.phone && <p className="text-red-500 mt-1 text-sm">{errors.phone}</p>}
+            {errors.phone && (
+              <p className="text-red-500 mt-1 text-sm">{errors.phone}</p>
+            )}
           </div>
 
           {/* Subject Field */}
@@ -186,10 +165,16 @@ export default function Contact() {
               name="subject"
               value={formData.subject}
               onChange={handleChange}
-              className={`w-full p-3 bg-gray-700 rounded-lg focus:outline-none focus:ring-2 ${errors.subject ? 'border-red-500 focus:ring-red-500' : 'focus:ring-yellow-400'}`}
+              className={`w-full p-3 bg-gray-700 rounded-lg focus:outline-none focus:ring-2 ${
+                errors.subject
+                  ? "border-red-500 focus:ring-red-500"
+                  : "focus:ring-yellow-400"
+              }`}
               placeholder="What's this about?"
             />
-            {errors.subject && <p className="text-red-500 mt-1 text-sm">{errors.subject}</p>}
+            {errors.subject && (
+              <p className="text-red-500 mt-1 text-sm">{errors.subject}</p>
+            )}
           </div>
 
           {/* Message Field */}
@@ -203,10 +188,16 @@ export default function Contact() {
               value={formData.message}
               onChange={handleChange}
               rows="5"
-              className={`w-full p-3 bg-gray-700 rounded-lg focus:outline-none focus:ring-2 ${errors.message ? 'border-red-500 focus:ring-red-500' : 'focus:ring-yellow-400'}`}
+              className={`w-full p-3 bg-gray-700 rounded-lg focus:outline-none focus:ring-2 ${
+                errors.message
+                  ? "border-red-500 focus:ring-red-500"
+                  : "focus:ring-yellow-400"
+              }`}
               placeholder="Your message here..."
             ></textarea>
-            {errors.message && <p className="text-red-500 mt-1 text-sm">{errors.message}</p>}
+            {errors.message && (
+              <p className="text-red-500 mt-1 text-sm">{errors.message}</p>
+            )}
           </div>
 
           {/* Submit Button */}
@@ -214,12 +205,12 @@ export default function Contact() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className={`w-full bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-3 px-4 rounded-lg flex items-center justify-center transition-colors ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
+              className={`w-full bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-3 px-4 rounded-lg flex items-center justify-center transition-colors ${
+                isSubmitting ? "opacity-70 cursor-not-allowed" : ""
+              }`}
             >
               {isSubmitting ? (
-                <span className="inline-flex items-center">
-                  Sending...
-                </span>
+                <span className="inline-flex items-center">Sending...</span>
               ) : (
                 <span className="inline-flex items-center">
                   <SendIcon className="mr-2" fontSize="small" />
@@ -231,7 +222,13 @@ export default function Contact() {
 
           {/* Success/Error Message */}
           {submitMessage.text && (
-            <div className={`mt-4 p-3 rounded-lg ${submitMessage.isError ? 'bg-red-900 text-red-200' : 'bg-green-900 text-green-200'}`}>
+            <div
+              className={`mt-4 p-3 rounded-lg ${
+                submitMessage.isError
+                  ? "bg-red-900 text-red-200"
+                  : "bg-green-900 text-green-200"
+              }`}
+            >
               {submitMessage.text}
             </div>
           )}
