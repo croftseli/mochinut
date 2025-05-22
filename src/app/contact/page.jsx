@@ -147,7 +147,7 @@ export default function Contact() {
                   ? "border-red-500 focus:ring-red-500"
                   : "focus:ring-yellow-400"
               }`}
-              placeholder="(123) 456-7890"
+              placeholder="+1 (123) 456-7890"
             />
             {errors.phone && (
               <p className="text-red-500 mt-1 text-sm">{errors.phone}</p>
@@ -250,9 +250,9 @@ export default function Contact() {
             <PhoneIcon className="mr-2 text-yellow-400" />
             Call Us
           </h3>
-          <p className="text-gray-300">(615)-424-3176</p>
-          <p className="text-gray-300 text-sm mt-2">Mon-Sat: 11am - 9pm</p>
-          <p className="text-gray-300 text-sm">Sunday: 12pm - 7pm</p>
+          <p className="text-gray-300">Currently Unavailable</p>
+          {/* <p className="text-gray-300 text-sm mt-2">Mon-Sat: 11am - 9pm</p>
+          <p className="text-gray-300 text-sm">Sunday: 12pm - 7pm</p> */}
         </div>
       </section>
     </div>

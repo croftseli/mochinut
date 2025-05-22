@@ -130,7 +130,9 @@ export default function Footer() {
               </p>
 
               <p>
-                <span className="font-semibold">Phone: +1 (615)-424-3176</span>
+                <span className="font-semibold">
+                  Phone: Currently Unavailable
+                </span>
               </p>
             </div>
           </div>
